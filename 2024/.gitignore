@@ -1,0 +1,15 @@
+# Input files
+**/input.txt
+input.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.env
+.venv
+env/
+venv/
+.pytest_cache/
