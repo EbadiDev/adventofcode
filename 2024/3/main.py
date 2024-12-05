@@ -4,22 +4,18 @@
 import re
 
 def find_mul(x: str):
-    # Match control instructions and mul operations
     pattern = r'((?:don\'t|do)\(\))|(mul\((\d+),(\d+)\))'
     matches = re.findall(pattern, x)
     
-    enabled = True  # Initially enabled
+    enabled = True  
     result = 0
     
     for match in matches:
         control, _, num1, num2 = match
-        
-        # Handle control instructions
         if control == "do()":
             enabled = True
         elif control == "don't()":
             enabled = False
-        # Handle mul operations when enabled
         elif enabled and num1 and num2:
             result += int(num1) * int(num2)
     
